@@ -11,7 +11,7 @@ wget -O /tmp/FirefoxSetup.dmg "https://download.mozilla.org/?product=firefox-esr
 # Validate code signature
 /usr/bin/codesign -v --verify /Volumes/Firefox/Firefox.app
 
-/bin/cp -v -R /Volumes/Firefox/Firefox.app /Applications/$namedfirefox
+/bin/cp -R /Volumes/Firefox/Firefox.app /Applications/$namedfirefox
 
 /bin/echo 'Bootstraping Mozilla Enterprise policies and hardened userjs prefs'
 
@@ -27,8 +27,6 @@ wget -O /tmp/FirefoxSetup.dmg "https://download.mozilla.org/?product=firefox-esr
 
 /usr/bin/hdiutil detach /Volumes/Firefox
 rm -vrf /tmp/FirefoxSetup.dmg
-
-stat /Applications/$namedfirefox
 
 /bin/echo 'DONE!'
 
